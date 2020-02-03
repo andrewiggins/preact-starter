@@ -1,27 +1,27 @@
 module.exports = function(api) {
-  api.cache(true);
+	api.cache(true);
 
-  const presets = [
-    [
-      "@babel/preset-env",
-      {
-        loose: true,
-        modules: false
-      }
-    ],
-    [
-      "@babel/preset-react",
-      {
-        pragma: "createElement",
-        pragmaFrag: "Fragment"
-      }
-    ]
-  ];
+	const presets = [
+		[
+			"@babel/preset-env",
+			{
+				loose: true,
+				modules: false
+			}
+		],
+		[
+			"@babel/preset-react",
+			{
+				pragma: "createElement",
+				pragmaFrag: "Fragment"
+			}
+		]
+	];
 
-  const plugins = [];
+	const plugins = [];
 
-  return {
-    presets,
-    plugins
-  };
+	return {
+		presets,
+		plugins
+	};
 };

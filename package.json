@@ -1,7 +1,7 @@
 {
   "name": "preact-starter",
   "version": "1.0.0",
-  "description": "",
+  "description": "Barebones starter for a preact project",
   "main": "dist/index.js",
   "scripts": {
     "build": "rollup -c",
@@ -12,11 +12,24 @@
   },
   "author": "",
   "license": "MIT",
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
     "@babel/preset-react": "^7.8.3",
     "@rollup/plugin-node-resolve": "^7.1.1",
+    "husky": "^4.2.1",
+    "lint-staged": "^10.0.7",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.19.1",
     "rollup": "^1.31.0",

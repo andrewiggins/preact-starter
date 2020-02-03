@@ -11,42 +11,42 @@ const babel = require("rollup-plugin-babel");
  * @param {Environment} [environment = "production"]
  */
 function generateConfig(
-  outputDir,
-  input,
-  minify,
-  customPlugins,
-  environment = "production"
+	outputDir,
+	input,
+	minify,
+	customPlugins,
+	environment = "production"
 ) {
-  const extension = minify ? ".min.js" : ".js";
+	const extension = minify ? ".min.js" : ".js";
 
-  // @ts-ignore
-  let plugins = [
-    ...customPlugins(environment),
-    nodeResolve({
-      extensions: [".mjs", ".js", ".jsx", ".json", ".node"]
-    })
-  ];
+	// @ts-ignore
+	let plugins = [
+		...customPlugins(environment),
+		nodeResolve({
+			extensions: [".mjs", ".js", ".jsx", ".json", ".node"]
+		})
+	];
 
-  if (minify) {
-    plugins.push(terser());
-  }
+	if (minify) {
+		plugins.push(terser());
+	}
 
-  return {
-    input,
-    output: {
-      dir: outputDir,
-      format: "iife",
-      compact: minify,
-      entryFileNames: `[name]${extension}`,
-      chunkFileNames: `[name]-[hash]${extension}`
-    },
-    plugins,
-    watch: {
-      clearScreen: false
-    }
-  };
+	return {
+		input,
+		output: {
+			dir: outputDir,
+			format: "iife",
+			compact: minify,
+			entryFileNames: `[name]${extension}`,
+			chunkFileNames: `[name]-[hash]${extension}`
+		},
+		plugins,
+		watch: {
+			clearScreen: false
+		}
+	};
 }
 
 module.exports = generateConfig("dist", "src/index.js", false, () => [
-  babel({ exclude: /node_modules/ })
+	babel({ exclude: /node_modules/ })
 ]);

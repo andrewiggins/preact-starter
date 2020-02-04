@@ -1,6 +1,7 @@
 const nodeResolve = require("@rollup/plugin-node-resolve");
 const { terser } = require("rollup-plugin-terser");
 const babel = require("rollup-plugin-babel");
+const copy = require("rollup-plugin-copy");
 
 /**
  * @typedef {"development" | "production"} Environment
@@ -48,5 +49,8 @@ function generateConfig(
 }
 
 module.exports = generateConfig("dist", "src/index.js", false, () => [
-	babel({ exclude: /node_modules/ })
+	babel({ exclude: /node_modules/ }),
+	copy({
+		targets: [{ src: "src/index.html", dest: "dist" }]
+	})
 ]);

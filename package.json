@@ -8,7 +8,7 @@
     "build:watch": "rollup -c -w",
     "deploy": "gh-pages -d dist",
     "dev": "run-p build:watch serve",
-    "serve": "serve dist",
+    "serve": "sirv dist",
     "start": "run-s dev"
   },
   "author": "",
@@ -38,7 +38,7 @@
     "rollup-plugin-copy": "^3.3.0",
     "rollup-plugin-terser": "^5.2.0",
     "rollup-plugin-visualizer": "^3.3.1",
-    "serve": "^11.3.0"
+    "sirv-cli": "^0.4.5"
   },
   "dependencies": {
     "preact": "^10.3.0"

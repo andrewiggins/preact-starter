@@ -8,7 +8,7 @@
     "build:watch": "rollup -c -w",
     "deploy": "gh-pages -d dist",
     "dev": "run-p build:watch serve",
-    "serve": "sirv dist --dev",
+    "serve": "sirv --dev",
     "start": "run-s dev"
   },
   "author": "",

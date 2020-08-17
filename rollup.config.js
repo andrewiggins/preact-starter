@@ -1,6 +1,6 @@
-const nodeResolve = require("@rollup/plugin-node-resolve");
+const babel = require("@rollup/plugin-babel").default;
+const nodeResolve = require("@rollup/plugin-node-resolve").default;
 const { terser } = require("rollup-plugin-terser");
-const babel = require("rollup-plugin-babel");
 const copy = require("rollup-plugin-copy");
 
 /**
@@ -24,8 +24,8 @@ function generateConfig(
 	let plugins = [
 		...customPlugins(environment),
 		nodeResolve({
-			extensions: [".mjs", ".js", ".jsx", ".json", ".node"]
-		})
+			extensions: [".mjs", ".js", ".jsx", ".json", ".node"],
+		}),
 	];
 
 	if (minify) {
@@ -39,18 +39,21 @@ function generateConfig(
 			format: "iife",
 			compact: minify,
 			entryFileNames: `[name]${extension}`,
-			chunkFileNames: `[name]-[hash]${extension}`
+			chunkFileNames: `[name]-[hash]${extension}`,
 		},
 		plugins,
 		watch: {
-			clearScreen: false
-		}
+			clearScreen: false,
+		},
 	};
 }
 
 module.exports = generateConfig("dist", "src/index.js", false, () => [
-	babel({ exclude: /node_modules/ }),
+	babel({
+		babelHelpers: "bundled",
+		exclude: /node_modules/,
+	}),
 	copy({
-		targets: [{ src: "src/index.html", dest: "dist" }]
-	})
+		targets: [{ src: "src/index.html", dest: "dist" }],
+	}),
 ]);

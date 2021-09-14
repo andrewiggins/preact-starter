@@ -1,7 +1,11 @@
 # Preact Starter
 
-Simple project to get started using [Preact](https://preactjs.com).
+Simple project to get started using [Preact](https://preactjs.com) &
+[wmr](https://wmr.dev).
 
 ## Notes
 
-This template is set up to deploy to GitHub Pages. Because GHPages sites are often under a directory (e.g. https://andrewiggins.github.io/preact-starter/ (the `preact-starter` path in this example)), this project by default starts the web server under the workspace root. Doing this better simulates the GHPages server since your project's local URL will also be under a directory (https://localhost:5000/dist). It is recommended to rename `dist` to your GitHub repo's name so that it matches the path GHPages will deploy to (e.g. https://localhost:5000/preact-starter).
+This template is set up to deploy to GitHub Pages. In order for the build output
+to work on GitHub Pages, replace `/preact-starter` in the package.json `build`
+script with the `/` + the name of your repo. This change ensures that your
+scripts are served from the correct path when deployed to GitHub Pages.

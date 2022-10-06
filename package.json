@@ -8,6 +8,8 @@
     "deploy": "gh-pages -d dist",
     "serve": "vite preview",
     "start": "vite",
+    "lint": "prettier --check **/*.{js,jsx,ts,tsx,css,md,html,yml,yaml,json}",
+    "lint:fix": "prettier --write **/*.{js,jsx,ts,tsx,css,md,html,yml,yaml,json}",
     "prepare": "husky install"
   },
   "author": "Andre Wiggins",

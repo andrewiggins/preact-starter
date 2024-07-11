@@ -10,7 +10,7 @@
     "start": "vite",
     "lint": "prettier --no-error-on-unmatched-pattern --check **/*.{js,jsx,ts,tsx,css,md,html,yml,yaml,json}",
     "lint:fix": "prettier --no-error-on-unmatched-pattern --write **/*.{js,jsx,ts,tsx,css,md,html,yml,yaml,json}",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "author": "Andre Wiggins",
   "license": "MIT",
@@ -20,16 +20,16 @@
     ]
   },
   "dependencies": {
-    "preact": "^10.19.3"
+    "preact": "^10.22.1"
   },
   "devDependencies": {
-    "@preact/preset-vite": "^2.7.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^15.2.0",
-    "prettier": "^3.1.1",
-    "vite": "^5.0.7"
+    "@preact/preset-vite": "^2.9.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
+    "prettier": "^3.3.2",
+    "vite": "^5.3.3"
   },
   "volta": {
-    "node": "20.10.0"
+    "node": "22.4.1"
   }
 }

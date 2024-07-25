@@ -8,8 +8,10 @@
     "build": "vite build",
     "serve": "vite preview",
     "start": "vite",
-    "lint": "prettier --no-error-on-unmatched-pattern --check **/*.{js,jsx,ts,tsx,css,md,html,yml,yaml,json}",
-    "lint:fix": "prettier --no-error-on-unmatched-pattern --write **/*.{js,jsx,ts,tsx,css,md,html,yml,yaml,json}",
+    "lint": "npm run tsc && npm run check-format",
+    "tsc": "tsc -p jsconfig.json",
+    "check-format": "prettier --no-error-on-unmatched-pattern --check **/*.{js,jsx,ts,tsx,css,md,html,yml,yaml,json}",
+    "format": "prettier --no-error-on-unmatched-pattern --write **/*.{js,jsx,ts,tsx,css,md,html,yml,yaml,json}",
     "prepare": "husky"
   },
   "author": "Andre Wiggins",
@@ -27,6 +29,7 @@
     "husky": "^9.0.11",
     "lint-staged": "^15.2.7",
     "prettier": "^3.3.2",
+    "typescript": "^5.5.4",
     "vite": "^5.3.3"
   },
   "volta": {

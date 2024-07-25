@@ -4,6 +4,10 @@
 		"checkJs": true,
 		"moduleResolution": "node",
 		"jsx": "react-jsx",
-		"jsxImportSource": "preact"
-	}
+		"jsxImportSource": "preact",
+		"noEmit": true,
+		"strict": true
+	},
+	"include": ["src"],
+	"exclude": ["node_modules"]
 }

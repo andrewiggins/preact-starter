@@ -16,7 +16,7 @@
   },
   "author": "Andre Wiggins",
   "license": "MIT",
-  "lint-staged": {
+  "nano-staged": {
     "**/*.{js,jsx,ts,tsx,css,md,html,yml,yaml,json}": [
       "prettier --write"
     ]
@@ -25,14 +25,14 @@
     "preact": "^10.22.1"
   },
   "devDependencies": {
-    "@preact/preset-vite": "^2.9.0",
-    "husky": "^9.0.11",
-    "lint-staged": "^15.2.7",
-    "prettier": "^3.3.2",
-    "typescript": "^5.5.4",
-    "vite": "^5.3.3"
+    "@preact/preset-vite": "^2.9.4",
+    "husky": "^9.1.7",
+    "nano-staged": "^0.8.0",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.7"
   },
   "volta": {
-    "node": "22.11.0"
+    "node": "22.13.0"
   }
 }

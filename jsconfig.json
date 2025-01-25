@@ -1,12 +1,21 @@
 {
 	"compilerOptions": {
-		"target": "ES2020",
+		"target": "ES2022",
+		"module": "ES2022",
 		"checkJs": true,
 		"moduleResolution": "node",
 		"jsx": "react-jsx",
 		"jsxImportSource": "preact",
 		"noEmit": true,
-		"strict": true
+		"strict": true,
+		"resolveJsonModule": true,
+		// Additional options useful for TypeScript files
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+    "isolatedModules": true,
+		"verbatimModuleSyntax": true,
+		"allowImportingTsExtensions": true,
+		"forceConsistentCasingInFileNames": true
 	},
 	"include": ["src"],
 	"exclude": ["node_modules"]

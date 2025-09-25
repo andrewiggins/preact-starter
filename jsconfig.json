@@ -12,6 +12,7 @@
 		// Additional options useful for TypeScript files
 		"allowSyntheticDefaultImports": true,
 		"esModuleInterop": true,
+		"isolatedDeclarations": true,
 		"isolatedModules": true,
 		"verbatimModuleSyntax": true,
 		"erasableSyntaxOnly": true,

@@ -2,24 +2,27 @@
 	"compilerOptions": {
 		"target": "ES2022",
 		"module": "ES2022",
-		"types": ["vite/client"],
-		"moduleResolution": "node",
+		"types": [],
+		"moduleResolution": "bundler",
 		"jsx": "react-jsx",
 		"jsxImportSource": "preact",
-		"noEmit": true,
 		"strict": true,
 		"resolveJsonModule": true,
-		// Additional options useful for TypeScript files
-		"allowSyntheticDefaultImports": true,
+		"outDir": "build/",
+		"composite": true,
 		"esModuleInterop": true,
 		"declaration": true,
 		"isolatedDeclarations": true,
 		"isolatedModules": true,
 		"verbatimModuleSyntax": true,
 		"erasableSyntaxOnly": true,
+		"emitDeclarationOnly": true,
 		"allowImportingTsExtensions": true,
 		"forceConsistentCasingInFileNames": true
 	},
-	"include": ["src"],
-	"exclude": ["node_modules"]
+	"references": [
+		{ "path": "./src/tsconfig.json" },
+		{ "path": "./scripts/tsconfig.json" }
+	],
+	"exclude": ["vite.config.ts", "node_modules"]
 }

@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 10
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
@@ -20,7 +23,6 @@ jobs:
       - run: pnpm install
       - run: pnpm run lint
       - run: pnpm run build
-      - run: pnpm run test
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

@@ -1,0 +1,15 @@
+# Avoid running package install scripts.
+onlyBuiltDependencies: []
+
+# Allow only package versions that were released *at least* 5 days ago.
+# 1440*5 = 7200 minutes = 5 days
+minimumReleaseAge: 7200
+# Ignore minimumReleaseAge for these explicitly listed packages.
+# Try to keep this list temporary, aim for an empty list of exclusions.
+minimumReleaseAgeExclude: []
+
+# Don't allow package trust levels that have decreased compared to previous releases.
+trustPolicy: no-downgrade
+# Ignore trustPolicy for these explicitly listed packages.
+# Try to keep this list temporary, aim to whittle down the number of exclusions over time.
+trustPolicyExclude: []

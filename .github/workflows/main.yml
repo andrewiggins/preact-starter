@@ -16,10 +16,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: "package.json"
-          cache: "npm"
-      - run: npm ci
-      - run: npm run lint
-      - run: npm run build
+          cache: "pnpm"
+      - run: pnpm install
+      - run: pnpm run lint
+      - run: pnpm run build
+      - run: pnpm run test
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

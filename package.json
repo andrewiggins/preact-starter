@@ -8,7 +8,7 @@
     "build": "vite build",
     "serve": "vite preview",
     "start": "vite",
-    "lint": "npm run tsc && npm run check-format",
+    "lint": "pnpm run tsc && pnpm run check-format",
     "tsc": "tsc -b tsconfig.json",
     "check-format": "prettier --ignore-unknown --check .",
     "format": "prettier --ignore-unknown --write .",

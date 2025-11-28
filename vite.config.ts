@@ -1,3 +1,4 @@
+/// <reference types="vitest/config" />
 import { defineConfig } from "vite";
 import preact from "@preact/preset-vite";
 
@@ -5,4 +6,15 @@ import preact from "@preact/preset-vite";
 export default defineConfig({
 	base: "/preact-starter/",
 	plugins: [preact()],
+	test: {
+		projects: [
+			{
+				test: {
+					name: "happy-dom",
+					root: "./test",
+					environment: "happy-dom",
+				},
+			},
+		],
+	},
 });

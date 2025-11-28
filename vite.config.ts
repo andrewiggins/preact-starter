@@ -1,9 +1,10 @@
 /// <reference types="vitest/config" />
+import type { UserConfig } from "vite";
 import { defineConfig } from "vite";
 import preact from "@preact/preset-vite";
 
 // https://vitejs.dev/config/
-export default defineConfig({
+const viteConfig: UserConfig = defineConfig({
 	base: "/preact-starter/",
 	plugins: [preact()],
 	test: {
@@ -18,3 +19,4 @@ export default defineConfig({
 		],
 	},
 });
+export default viteConfig;

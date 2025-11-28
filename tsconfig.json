@@ -1,7 +1,7 @@
 {
 	"compilerOptions": {
-		"target": "ES2022",
-		"module": "ES2022",
+		"target": "esnext",
+		"module": "esnext",
 		"types": [],
 		"moduleResolution": "bundler",
 		"jsx": "react-jsx",
@@ -9,20 +9,21 @@
 		"strict": true,
 		"resolveJsonModule": true,
 		"outDir": "build/",
-		"composite": true,
 		"esModuleInterop": true,
 		"declaration": true,
 		"isolatedDeclarations": true,
 		"isolatedModules": true,
 		"verbatimModuleSyntax": true,
 		"erasableSyntaxOnly": true,
-		"emitDeclarationOnly": true,
 		"allowImportingTsExtensions": true,
-		"forceConsistentCasingInFileNames": true
+		"forceConsistentCasingInFileNames": true,
+		"composite": true,
+		"emitDeclarationOnly": true
 	},
 	"references": [
 		{ "path": "./src/tsconfig.json" },
-		{ "path": "./scripts/tsconfig.json" }
+		{ "path": "./scripts/tsconfig.json" },
+		{ "path": "./test/tsconfig.json" }
 	],
 	"exclude": ["vite.config.ts", "node_modules"]
 }

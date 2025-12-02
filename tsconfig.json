@@ -8,7 +8,7 @@
 		"jsxImportSource": "preact",
 		"strict": true,
 		"resolveJsonModule": true,
-		"outDir": "build/",
+		"outDir": "build",
 		"esModuleInterop": true,
 		"declaration": true,
 		"isolatedDeclarations": true,
@@ -25,5 +25,5 @@
 		{ "path": "./scripts/tsconfig.json" },
 		{ "path": "./test/tsconfig.json" }
 	],
-	"exclude": ["vite.config.ts", "node_modules"]
+	"exclude": ["build", "node_modules"]
 }

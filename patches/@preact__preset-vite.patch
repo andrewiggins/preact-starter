@@ -1,0 +1,13 @@
+diff --git a/dist/esm/index.d.mts b/dist/esm/index.d.mts
+index 6852f5acc64abb241cafa35e416f14cc2a9ec6d6..d194c059cd980b9436943c47141ced7d29e990c4 100644
+--- a/dist/esm/index.d.mts
++++ b/dist/esm/index.d.mts
+@@ -1,7 +1,7 @@
+ import type { Plugin } from "vite";
+-import type { FilterPattern } from "@rollup/pluginutils";
+ import type { ParserOptions } from "@babel/parser";
+ import type { TransformOptions } from "@babel/core";
++export type FilterPattern = ReadonlyArray<string | RegExp> | string | RegExp | null;
+ export type BabelOptions = Omit<TransformOptions, "ast" | "filename" | "root" | "sourceFileName" | "sourceMaps" | "inputSourceMap">;
+ export interface PreactPluginOptions {
+     /**

@@ -30,7 +30,7 @@ importers:
         specifier: 24.10.1
         version: 24.10.1
       '@vitest/coverage-v8':
-        specifier: 4.0.13
+        specifier: ^4.0.13
         version: 4.0.13(vitest@4.0.13(@types/node@24.10.1)(happy-dom@20.0.10))
       happy-dom:
         specifier: ^20.0.10

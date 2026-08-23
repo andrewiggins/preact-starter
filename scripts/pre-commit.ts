@@ -1,13 +1,16 @@
 #!/usr/bin/env node
-import { execSync } from "node:child_process";
+import { execFileSync } from "node:child_process";
+import { fileURLToPath } from "node:url";
 
 try {
 	// Get list of staged files
-	const output = execSync("git diff --cached --name-only --diff-filter=ACMR", {
-		encoding: "utf-8",
-	});
-
-	const files = output.trim().split("\n").filter(Boolean);
+	// NUL-delimited paths and argument arrays keep filenames out of shell syntax.
+	const output = execFileSync(
+		"git",
+		["diff", "--cached", "--name-only", "--diff-filter=ACMR", "-z"],
+		{ encoding: "utf-8" },
+	);
+	const files = output.split("\0").filter(Boolean);
 
 	if (files.length === 0) {
 		process.exit(0);
@@ -17,15 +20,17 @@ try {
 
 	// Run prettier on staged files
 	// Using --ignore-unknown so prettier skips files it doesn't support
-	execSync(
-		`npx prettier --ignore-unknown --write ${files.map((f) => `"${f}"`).join(" ")}`,
-		{
-			stdio: "inherit",
-		},
+	const prettierCliPath = fileURLToPath(
+		import.meta.resolve("prettier/bin/prettier.cjs"),
+	);
+	execFileSync(
+		process.execPath,
+		[prettierCliPath, "--ignore-unknown", "--write", "--", ...files],
+		{ stdio: "inherit" },
 	);
 
 	// Re-stage the formatted files
-	execSync(`git add ${files.map((f) => `"${f}"`).join(" ")}`, {
+	execFileSync("git", ["add", "--", ...files], {
 		stdio: "inherit",
 	});
 

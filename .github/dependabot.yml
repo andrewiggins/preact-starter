@@ -1,0 +1,14 @@
+version: 2
+updates:
+  # Keep SHA-pinned actions up to date.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    # Wait before adopting brand-new releases, a bit longer than the 5-day
+    # minimumReleaseAge used for npm dependencies.
+    cooldown:
+      default-days: 7
+    groups:
+      github-actions:
+        patterns: ["*"]

@@ -28,6 +28,8 @@ jobs:
           node-version-file: "package.json"
           cache: "pnpm"
       - run: pnpm install --frozen-lockfile
+      - name: Audit dependencies
+        run: pnpm audit --audit-level high
       - run: pnpm run lint
       - run: pnpm run build
       - run: pnpm run test --coverage

@@ -1,5 +1,17 @@
 version: 2
 updates:
+  # Dependabot uses the npm ecosystem for pnpm manifests and lockfiles.
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      npm-and-yarn:
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
+
   # Keep SHA-pinned actions up to date.
   - package-ecosystem: github-actions
     directory: /

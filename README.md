@@ -3,6 +3,13 @@
 Simple project to get started using [Preact](https://preactjs.com) &
 [vite](https://vitejs.dev).
 
+## Pre-commit formatting
+
+`pnpm install` installs a pre-commit hook that runs [nano-staged](https://github.com/usmanyunusov/nano-staged)
+with Prettier. Nano-staged preserves unstaged edits in partially staged files and
+stages the formatted content automatically. Run `pnpm exec nano-staged` to run it
+manually, or `pnpm run prepare` to reinstall the hook.
+
 ## Notes
 
 This template is set up to deploy to GitHub Pages. In order for the build output

@@ -15,6 +15,9 @@
     "format": "prettier --ignore-unknown --write .",
     "prepare": "node scripts/prepare.ts"
   },
+  "nano-staged": {
+    "*": "prettier --ignore-unknown --write --"
+  },
   "author": "Andre Wiggins",
   "license": "MIT",
   "dependencies": {
@@ -26,6 +29,7 @@
     "@types/node": "^26.6.3",
     "@vitest/coverage-v8": "4.1.10",
     "happy-dom": "^20.14.5",
+    "nano-staged": "^1.0.2",
     "prettier": "^3.9.6",
     "typescript": "7.0.2",
     "vite": "8.2.0",

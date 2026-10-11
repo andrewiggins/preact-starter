@@ -12,9 +12,9 @@ try {
 	// Directory already exists, ignore
 }
 
-// Pre-commit hook script - calls our Node.js script for cross-platform compatibility
+// Nano-staged handles formatting, staging, and preserving unstaged changes.
 const preCommitScript = `#!/bin/sh
-node --experimental-strip-types ./scripts/pre-commit.ts
+pnpm exec nano-staged
 `;
 
 // Write pre-commit hook

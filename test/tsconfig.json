@@ -2,7 +2,11 @@
 	"extends": "../tsconfig.json",
 	"compilerOptions": {
 		"outDir": "../build/test",
-		"types": ["node"]
+		"types": [
+			"node",
+			// The referenced src declarations preserve side-effect CSS imports.
+			"vite/client"
+		]
 	},
 	"references": [{ "path": "../src/tsconfig.json" }],
 	"include": ["."]

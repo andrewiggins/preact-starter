@@ -7,12 +7,13 @@ on:
   workflow_call:
   workflow_dispatch:
 
-# Least privilege by default; jobs request anything more explicitly.
-permissions:
-  contents: read
+# Deny permissions by default; each job grants only what it needs.
+permissions: {}
 
 jobs:
   build:
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -27,6 +28,8 @@ jobs:
           node-version-file: "package.json"
           cache: "pnpm"
       - run: pnpm install --frozen-lockfile
+      - name: Audit dependencies
+        run: pnpm audit --audit-level high
       - run: pnpm run lint
       - run: pnpm run build
       - run: pnpm run test --coverage

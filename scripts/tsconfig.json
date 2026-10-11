@@ -1,8 +1,9 @@
 {
 	"extends": "../tsconfig.json",
 	"compilerOptions": {
-		"outDir": "../build/scripts",
+		"rootDir": "..",
+		"outDir": "../build",
 		"types": ["node"]
 	},
-	"include": ["."]
+	"include": [".", "../vite.config.ts"]
 }

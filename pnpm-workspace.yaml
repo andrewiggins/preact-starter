@@ -15,6 +15,7 @@ trustPolicyExclude:
 # Pin @types/node to match the Node.js version used by the project.
 overrides:
   "@types/node": 26.6.3
+  rollup: 4.62.4
 
 patchedDependencies:
   "@preact/preset-vite": patches/@preact__preset-vite.patch

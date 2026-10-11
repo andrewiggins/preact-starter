@@ -7,12 +7,13 @@ on:
   workflow_call:
   workflow_dispatch:
 
-# Least privilege by default; jobs request anything more explicitly.
-permissions:
-  contents: read
+# Deny permissions by default; each job grants only what it needs.
+permissions: {}
 
 jobs:
   build:
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
